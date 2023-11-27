@@ -1,3 +1,5 @@
+Сначала описание действий по методичке, с 14 пункта вывод скрипта автоматического запуска.
+
 1. Подключенные диски после развёртывания ВМ
 ```
 [vagrant@otuslinux ~]$ lsblk
@@ -410,3 +412,20 @@ sdf         8:80   0   250M  0 disk
   |-md0p4 259:7    0 148.5M  0 md    /raid/part4
   `-md0p5 259:8    0   147M  0 md    /raid/part5
 ```
+
+14. При автоматизации создания прописал ссылку на скрпит в Вагрант-файл, выбрал создание RAID-5. Вывод после создания ВМ
+```
+[vagrant@otuslinux ~]$ df -h
+Filesystem      Size  Used Avail Use% Mounted on
+devtmpfs        489M     0  489M   0% /dev
+tmpfs           496M     0  496M   0% /dev/shm
+tmpfs           496M  6.7M  489M   2% /run
+tmpfs           496M     0  496M   0% /sys/fs/cgroup
+/dev/sda1        40G  4.4G   36G  11% /
+/dev/md0p1      186M  1.6M  171M   1% /raid/part1
+/dev/md0p2      188M  1.6M  173M   1% /raid/part2
+/dev/md0p3      190M  1.6M  175M   1% /raid/part3
+/dev/md0p4      188M  1.6M  173M   1% /raid/part4
+/dev/md0p5      186M  1.6M  171M   1% /raid/part5
+tmpfs           100M     0  100M   0% /run/user/1000
+``` 
